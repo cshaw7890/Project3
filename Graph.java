@@ -98,7 +98,7 @@ public class Graph
     public void shortestPath(City startCity)
     {
         reset();
-        ArrayList<Integer> distances = new ArrayList<Integer>();
+        ArrayList<City> distances = new ArrayList<City>();
         PriorityQueue<City> q = new PriorityQueue<City>();
         q.add(startCity);
         startCity.dist = 0;
