@@ -36,9 +36,12 @@ public class ExperimentController
             {
                 String s = s1.nextLine();
                 String [] a = s.split(" "); 
-                String name = s[0];
                 Warehouse w = new Warehouse();
-                
+                City c = graph.getCity(a[0]);
+                c.warehouse = w;
+                for(int i = 1; i < a.length; i++){
+                    w.orders.add(new Cargo(Integer.parseInt(a[i]), i));
+                }
             }
             
         }
