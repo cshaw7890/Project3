@@ -36,6 +36,9 @@ public class ExperimentController
             {
                 String s = s1.nextLine();
                 String [] a = s.split(" "); 
+                String name = s[0];
+                Warehouse w = new Warehouse();
+                
             }
             
         }
