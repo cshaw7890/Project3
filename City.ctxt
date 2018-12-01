@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=City
-comment0.text=\n\ CS150,\ Project\ 3\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\n
+comment0.text=\r\n\ CS150,\ Project\ 3\r\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\r\n
 comment1.params=n
 comment1.target=City(java.lang.String)
 comment2.params=v

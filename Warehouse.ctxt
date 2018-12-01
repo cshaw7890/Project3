@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.target=Warehouse
-comment0.text=\n\ CS150,\ Project\ 3\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\n
-numComments=1
+comment0.text=\r\n\ CS150,\ Project\ 3\r\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\r\n
+comment1.params=
+comment1.target=Warehouse()
+numComments=2

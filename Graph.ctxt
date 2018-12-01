@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Graph
-comment0.text=\n\ Write\ a\ description\ of\ class\ Graph\ here.\n\ @author\ ()\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Graph\ here.\r\n\ @author\ ()\r\n
 comment1.params=start\ end\ w
 comment1.target=void\ addRoad(java.lang.String,\ java.lang.String,\ int)
 comment1.text=Add\ a\ directed\ or\ undirected\ edge
@@ -13,7 +13,4 @@ comment3.text=compute\ the\ weighted\ distance\ from\ a\ given\ start\ vertex
 comment4.params=
 comment4.target=void\ reset()
 comment4.text=reset\ instace\ vars\ of\ every\ vertex
-comment5.params=args
-comment5.target=void\ main(java.lang.String[])
-comment5.text=Main\ method
-numComments=6
+numComments=5

@@ -23,7 +23,7 @@ public class Graph
     }
 
     /* retrieve the vertex associated with the given name */
-    private City getCity(String name)
+    public City getCity(String name)
     {
         City v = vertexMap.get(name);
         if(v == null)
@@ -98,7 +98,8 @@ public class Graph
     public void shortestPath(City startCity)
     {
         reset();
-        ArrayList<City> distances = new ArrayList<City>();
+        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<Integer> distances = new ArrayList<Integer>();
         PriorityQueue<City> q = new PriorityQueue<City>();
         q.add(startCity);
         startCity.dist = 0;
@@ -108,6 +109,10 @@ public class Graph
             if( u.visited ) continue;
             u.visited = true;
             System.out.println(u.name + " " + u.dist);
+            if(u.warehouse != null && u.dist != 0){
+                names.add(u.name);
+                distances.add(u.dist);
+            }
             for(Road e : u.nbs)
             {
                 City v = e.v;
@@ -115,15 +120,12 @@ public class Graph
                 {
                     v.dist = u.dist + e.w;
                     v.prev = u;
-                    if(v.warehouse != null){
-                        distances.remove(v);
-                        distances.add(v);
-                    }
+
                     q.add(v);
                 }
             }
         }
-        Collections.sort(distances);
+        startCity.names = names;
         startCity.distances = distances;
     }
 
@@ -139,17 +141,17 @@ public class Graph
     }
 
     /* Main method */
-    public static void main(String[] args) throws IOException
-    {
-        Scanner in = new Scanner(new FileReader("graph.txt"));
-        Graph g = new Graph();
-        while(in.hasNext())
-        {
-            String [] line = in.nextLine().split(" ");
-            if(line.length == 3)
-            {
-                int w = Integer.parseInt(line[2]);
-            }
-        }
-    }
+    //   public static void main(String[] args) throws IOException
+    //   {
+    //      Scanner in = new Scanner(new FileReader("graph.txt"));
+    //      Graph g = new Graph();
+    //     while(in.hasNext())
+    //     {
+    //         String [] line = in.nextLine().split(" ");
+    //        if(line.length == 3)
+    //        {
+    //          int w = Integer.parseInt(line[2]);
+    //       }
+    //    }
+    //  }
 }
