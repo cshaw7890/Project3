@@ -44,6 +44,13 @@ public class ExperimentController
                 }
             }
             
+            for(City c: graph.cities){
+                if(c.warehouse != null){
+                    graph.shortestPath(c);
+                }
+                
+            }
+            
         }
         catch(Exception e)
         {
