@@ -98,7 +98,8 @@ public class Graph
     public void shortestPath(City startCity)
     {
         reset();
-        PriorityQueue<City> q = new PriorityQueue<>();
+        ArrayList<Integer> distances = new ArrayList<Integer>();
+        PriorityQueue<City> q = new PriorityQueue<City>();
         q.add(startCity);
         startCity.dist = 0;
         while( !q.isEmpty() )
@@ -114,10 +115,16 @@ public class Graph
                 {
                     v.dist = u.dist + e.w;
                     v.prev = u;
+                    if(v.warehouse != null){
+                        distances.remove(v);
+                        distances.add(v);
+                    }
                     q.add(v);
                 }
             }
         }
+        Collections.sort(distances);
+        startCity.distances = distances;
     }
 
     /* reset instace vars of every vertex */
