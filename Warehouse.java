@@ -6,10 +6,10 @@ import java.io.*;
  */
 public class Warehouse
 {
-    PriorityQueue<Cargo>    orders;
+    PriorityQueue<Cargo>    orders = new PriorityQueue<Cargo>();
     
     public Warehouse()
     {
-        orders = new PriorityQueue<Cargo>();
+
     }
 }
