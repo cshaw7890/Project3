@@ -7,5 +7,5 @@ import java.io.*;
 public class Truck
 {
     City    current_city;
-    int     capacity;
+    int     capacity = 500;
 }
