@@ -12,6 +12,7 @@ public class City implements Comparable<City>
     boolean visited = false; //visited
     City              prev;
     Warehouse         warehouse;
+    List<City> distances = new ArrayList<City>();
     
     public City (String n)
     {
