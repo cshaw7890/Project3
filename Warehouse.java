@@ -7,4 +7,9 @@ import java.io.*;
 public class Warehouse
 {
     PriorityQueue<Cargo>    orders;
+    
+    public Warehouse()
+    {
+        orders = new PriorityQueue<Cargo>();
+    }
 }
