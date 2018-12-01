@@ -7,7 +7,7 @@ import java.io.*;
 public class Graph
 {
     //Vertex [] V = new Vertex[100];
-    //List<Vertex> V = new ArrayList<Vertex>();
+    List<City> cities = new ArrayList<City>();
     Map<String, City> vertexMap = new HashMap<String, City>();
 
     /* Add a directed or undirected edge */
@@ -30,6 +30,7 @@ public class Graph
         {
             v = new City(name);
             vertexMap.put(name, v);
+            cities.add(v);
         }
         return v;
     }
