@@ -49,6 +49,9 @@ public class ExperimentController
                 }
                 graph.cities.add(c);
             }
+            
+            City cent = graph.getCity(this.center);
+            graph.shortestPath(cent);
 
             for(City c: graph.cities){
                 System.out.println(c.warehouse);
@@ -66,16 +69,38 @@ public class ExperimentController
                 }
                 System.out.println();
             }
-            int truckNumber = 1;
-            truck = new Truck(truckNumber);
-            int i = 0;
-            City c;
-            //while there are warehouses remaining{
             
-            while(int n < total number of warehouses){
-                current_city.get(n).warehouse;
+        //start to work
+        boolean stop = false;
+        int truckNumber = 1;
+           
+        while(!stop){
+            truck = new Truck(truckNumber++);
+            City c = graph.getCity(center);            
+            int n = 0;
+            stop = true;
+            City prev;
+            while(n < c.names.size()){
+                c = truck.current_city;
+                City next = graph.getCity(c.names.get(n));
+                if(next.warehouse.orders.size() > 0 && next.warehouse.orders.peek().weight < truck.capacity){
+                    truck.capacity -= next.warehouse.orders.pop().weight;
+                    if(!next.equals(prev)){
+                        truck.distance_travelled += c.distance.get(n);
+                    }
+                    prev = next;                  
+                    stop = false;
+                }
+                else{
+                    truck.current_city = next;
+                    n++;
+                }
                 
             }
+        }
+
+          
+            
             do{
                 c = truck.current_city.names.get(i);
                 if(c.warehouse.orders.size() > 0 && c.warehouse.orders.peek() < truck.capacity){
