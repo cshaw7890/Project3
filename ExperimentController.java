@@ -8,6 +8,7 @@ public class ExperimentController
 {
     String    center;
     Graph     graph;
+    Truck     truck;
 
     public void read()
     {
@@ -65,6 +66,29 @@ public class ExperimentController
                 }
                 System.out.println();
             }
+            int truckNumber = 1;
+            truck = new Truck(truckNumber);
+            int i = 0;
+            City c;
+            //while there are warehouses remaining{
+            
+            while(int n < total number of warehouses){
+                current_city.get(n).warehouse;
+                
+            }
+            do{
+                c = truck.current_city.names.get(i);
+                if(c.warehouse.orders.size() > 0 && c.warehouse.orders.peek() < truck.capacity){
+                    //add the smallest package to the truck, change the truck capacity and move to the current city
+                    break;
+                }
+                else{
+                    n++;
+                }
+                i++;
+            }while(i < warehouses);
+        }
+            //ship the orders
 
         }
         catch(Exception e)
