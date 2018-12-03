@@ -7,9 +7,10 @@ import java.io.*;
 public class Warehouse
 {
     PriorityQueue<Cargo>    orders = new PriorityQueue<Cargo>();
+    City c;
     
-    public Warehouse()
+    public Warehouse(City city)
     {
-
+        c = city;
     }
 }

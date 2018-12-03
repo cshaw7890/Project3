@@ -6,17 +6,19 @@ import java.io.*;
  */
 public class Cargo implements Comparable<Cargo>
 {
-    int     weight;
+    Integer     weight;
     int     order_number;
+    Warehouse warehouse;
     
-    public Cargo(int w, int oN)
+    public Cargo(int w, int oN, Warehouse ware)
     {
         weight       = w;
         order_number = oN;
+        warehouse    = ware;
     }
     
     public int compareTo(Cargo c2)
     {
-        return (this.weight - c2.weight);
+        return this.weight.compareTo(c2.weight);
     }
 }

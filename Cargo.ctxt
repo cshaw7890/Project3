@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Cargo
-comment0.text=\n\ CS150,\ Project\ 3\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\n
-comment1.params=w\ oN
-comment1.target=Cargo(int,\ int)
+comment0.text=\r\n\ CS150,\ Project\ 3\r\n\ @author\ (Carson\ Shaw\ &\ Jason\ Wu)\r\n
+comment1.params=w\ oN\ ware
+comment1.target=Cargo(int,\ int,\ Warehouse)
 comment2.params=c2
 comment2.target=int\ compareTo(Cargo)
 numComments=3

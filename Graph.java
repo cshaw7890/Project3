@@ -16,6 +16,7 @@ public class Graph
         City u = getCity(start);
         City v = getCity(end);
         u.nbs.add(new Road(u, v, w));
+        v.nbs.add(new Road(v, u, w));
 
         //for undirected graphs......
         //u.nbs.add(new Edge(u, v, w));
@@ -108,10 +109,16 @@ public class Graph
             City u = q.poll();
             if( u.visited ) continue;
             u.visited = true;
-            System.out.println(u.name + " " + u.dist);
-            if(u.warehouse != null && u.dist != 0){
-                names.add(u.name);
-                distances.add(u.dist);
+            if(u.warehouse != null){
+                int n = 0;
+                while(n < distances.size() && u.dist > distances.get(n)){
+                    n++;
+                }
+                while(n < distances.size() && u.dist == distances.get(n) && u.name.compareTo(names.get(n)) > 0){
+                    n++;
+                }
+                names.add(n, u.name);
+                distances.add(n, u.dist);
             }
             for(Road e : u.nbs)
             {
@@ -127,6 +134,7 @@ public class Graph
         }
         startCity.names = names;
         startCity.distances = distances;
+
     }
 
     /* reset instace vars of every vertex */
