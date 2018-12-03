@@ -17,6 +17,6 @@ public class Cargo implements Comparable<Cargo>
     
     public int compareTo(Cargo c2)
     {
-        return (this.weight = c2.weight);
+        return (this.weight - c2.weight);
     }
 }
